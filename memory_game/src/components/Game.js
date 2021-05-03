@@ -9,37 +9,7 @@ class Game extends React.Component {
         }
     }
 
-    icons = [
-        {
-            _id: 1,
-            link: 'fab fa-angellist fa-4x'
-        },
-
-        {
-            _id: 2,
-            link: 'fas fa-american-sign-language-interpreting fa-3x'
-        },
-
-        {
-            _id: 3,
-            link: 'fas fa-allergies fa-4x'
-        },
-
-        {
-            _id: 4,
-            link: 'fas fa-handshake fa-3x'
-        },
-
-        {
-            _id: 5,
-            link: 'fas fa-thumbs-up fa-3x'
-        },
-
-        {
-            _id: 6,
-            link: 'fas fa-hands fa-3x'
-        }
-    ]
+    icons = ['fab fa-angellist fa-4x', 'fas fa-american-sign-language-interpreting fa-3x', 'fas fa-allergies fa-4x', 'fas fa-handshake fa-3x', 'fas fa-thumbs-up fa-3x', 'fas fa-hands fa-3x' ]
 
 
     componentDidMount(){
@@ -56,8 +26,9 @@ class Game extends React.Component {
 
         numberGenerator(tmp);
         for(let i = 0; i < tmp.length; i++) {
-            if(tmp[i] > 6) {
-                tmp[i] = tmp[i]-6
+            tmp[i] -= 1
+            if(tmp[i] > 5) {
+                tmp[i] = tmp[i] - 6
             }
         }
         this.setState({
@@ -69,54 +40,28 @@ class Game extends React.Component {
         const {cards} = this.state;
         console.log(cards)
         return(
-            <div class="container-fluid w-100">
-                <div class="row justify-content-center">
-                    <div class="col-3" id="1">
-                        <Card fromParent = {this.icons[0].link} />
-                    </div>
-                    <div class="col-3" id="2">
-                        <Card fromParent = {this.icons[1].link}/>
-                    </div>
-                    <div class="col-3" id="3">
-                        <Card fromParent = {this.icons[2].link}/>
-                    </div>
+            <div className="container-fluid w-100">
+                <div className="row justify-content-center">
+                    <Card fromParent = {this.icons[cards[0]]}/>
+                    <Card fromParent = {this.icons[cards[1]]}/>
+                    <Card fromParent = {this.icons[cards[2]]}/>
                 </div>
-                <div class="row justify-content-center">
-                    <div class="col-3" id="4">
-                        <Card fromParent = {this.icons[3].link}/>
-                    </div>
-                    <div class="col-3" id="5">
-                        <Card fromParent = {this.icons[4].link}/>
-                    </div>
-                    <div class="col-3" id="6">
-                        <Card fromParent = {this.icons[5].link}/>
-                    </div>
+                <div className="row justify-content-center">
+                    <Card fromParent = {this.icons[cards[3]]}/>
+                    <Card fromParent = {this.icons[cards[4]]}/>
+                    <Card fromParent = {this.icons[cards[5]]}/>
                 </div>
-                <div class="row justify-content-center">
-                    <div class="col-3" id="7">
-                        <Card fromParent = {this.icons[2].link}/>
-                    </div>
-                    <div class="col-3" id="8">
-                        <Card fromParent = {this.icons[2].link}/>
-                    </div>
-                    <div class="col-3" id="9">
-                        <Card fromParent = {this.icons[2].link}/>
-                    </div>
+                <div className="row justify-content-center">
+                    <Card fromParent = {this.icons[cards[6]]}/>
+                    <Card fromParent = {this.icons[cards[7]]}/>
+                    <Card fromParent = {this.icons[cards[8]]}/>
                 </div>
-                <div class="row justify-content-center">
-                    <div class="col-3" id="10">
-                        <Card fromParent = {this.icons[2].link}/>
-                    </div>
-                    <div class="col-3" id="11">
-                        <Card fromParent = {this.icons[2].link}/>
-                    </div>
-                    <div class="col-3" id="12">
-                        <Card fromParent = {this.icons[2].link}/>
-                    </div>
+                <div className="row justify-content-center">
+                    <Card fromParent = {this.icons[cards[9]]}/>
+                    <Card fromParent = {this.icons[cards[10]]}/>
+                    <Card fromParent = {this.icons[cards[11]]}/>
                 </div>
-                
             </div>    
-
         )
     }
 }

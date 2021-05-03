@@ -13,6 +13,26 @@ code {
     monospace;
 }
 
+a {
+  text-decoration: none;
+  background-color: #6C757D;
+  color: rgb(0, 0, 0);
+  font-size: 30px;
+  font-weight: bold;
+  width: 200px;
+  height: 100px;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 100px;
+  border-radius: 8px;
+  box-shadow: rgb(169, 169, 169) 5px 5px 5px;
+}
+
+a:hover {
+  color: rgb(255, 255, 255);
+  box-shadow: rgb(169, 169, 169) 0px 0px 25px 15px ;
+}
 
 [class^=col-] {
   height: 15vh;
@@ -23,3 +43,38 @@ code {
   justify-content: center;
 }
 
+.home_main {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.welcome {
+  width: 80%;
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.welcome p {
+  font-size: 8vw;
+  font-weight: bolder;
+  text-decoration: underline;
+}
+
+.links {
+  width: 61%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 60px;
+}
+
+@media screen and (max-width:700px) {
+  .links {
+    display: none;
+  }
+}
